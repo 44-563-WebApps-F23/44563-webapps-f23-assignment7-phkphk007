@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 7</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootsmap@5.3.2/dist/css/bootsmap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootsmap@5.3.2/dist/js/bootsmap.min.js"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
@@ -42,8 +42,8 @@
   </head>
   <body>
     <div class="container">
-      <h1>Find the map by Hemanth Kumar</h1>
-      <p>Click on the locations to search for map, beware the maps</p>
+      <h1>Find the treasure by Hemanth Kumar</h1>
+      <p>Click on the locations to search for treasure, beware the traps</p>
       <p id="locations">Number of locations checked is zero</p>
       <p id="penalty">Penalty is zero</p>
       <p>Click for help</p>
@@ -52,90 +52,244 @@
       <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <div class="col">
           <div class="p-2">
-            <img src="map.jpg" alt="map" />
+            <img id="img1" src="map.jpg" alt="map" onclick="check(0)" />
           </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img2" src="map.jpg" alt="map" onclick="check(1)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img3" src="map.jpg" alt="map" onclick="check(2)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img4" src="map.jpg" alt="map" onclick="check(3)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-      </div>
-      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img5" src="map.jpg" alt="map" onclick="check(4)" />
+          </div>
         </div>
       </div>
       <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img6" src="map.jpg" alt="map" onclick="check(5)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img7" src="map.jpg" alt="map" onclick="check(6)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img8" src="map.jpg" alt="map" onclick="check(7)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img9" src="map.jpg" alt="map" onclick="check(8)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-      </div>
-      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
-        </div>
-        <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img10" src="map.jpg" alt="map" onclick="check(9)" />
+          </div>
         </div>
       </div>
       <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img11" src="map.jpg" alt="map" onclick="check(10)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img12" src="map.jpg" alt="map" onclick="check(11)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img13" src="map.jpg" alt="map" onclick="check(12)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img14" src="map.jpg" alt="map" onclick="check(13)" />
+          </div>
         </div>
         <div class="col">
-          <div class="p-2"><img src="map.jpg" alt="map" /></div>
+          <div class="p-2">
+            <img id="img15" src="map.jpg" alt="map" onclick="check(14)" />
+          </div>
+        </div>
+      </div>
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+          <div class="p-2">
+            <img id="img16" src="map.jpg" alt="map" onclick="check(15)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img17" src="map.jpg" alt="map" onclick="check(16)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img18" src="map.jpg" alt="map" onclick="check(17)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img19" src="map.jpg" alt="map" onclick="check(18)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img20" src="map.jpg" alt="map" onclick="check(19)" />
+          </div>
+        </div>
+      </div>
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+          <div class="p-2">
+            <img id="img21" src="map.jpg" alt="map" onclick="check(20)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img22" src="map.jpg" alt="map" onclick="check(21)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img23" src="map.jpg" alt="map" onclick="check(22)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img24" src="map.jpg" alt="map" onclick="check(23)" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-2">
+            <img id="img25" src="map.jpg" alt="map" onclick="check(24)" />
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      var ids = [
+        "img1",
+        "img2",
+        "img3",
+        "img4",
+        "img5",
+        "img6",
+        "img7",
+        "img8",
+        "img9",
+        "img10",
+        "img11",
+        "img12",
+        "img13",
+        "img14",
+        "img15",
+        "img16",
+        "img17",
+        "img18",
+        "img19",
+        "img20",
+        "img21",
+        "img22",
+        "img23",
+        "img24",
+        "img25",
+      ];
+      var checkCount = 0;
+      var penalty = 0;
+      var lastCheck = 0;
+      var treasureLocation = 5;
+      var trapLocation = 18;
+      var gameOver = false;
+
+      // check(position fucntion start
+      function check(position) {
+        if (gameOver) {
+          return;
+        }
+        var id = ids[position];
+        var image = document.getElementById(id);
+        if (position == treasureLocation) {
+          image.src = "treasure.jpg";
+          gameOver = true;
+          penalty -= 3;
+        } else if (position == trapLocation) {
+          image.src = "trap.jpg";
+          gameOver = true;
+          penalty += 4;
+        } else {
+          image.src = "pirate.png";
+        }
+        checkCount++;
+        penalty++;
+        document.getElementById("locations").innerHTML =
+          "Number of locations checked is " + checkCount;
+        document.getElementById("penalty").innerHTML = "penalty is " + penalty;
+        lastCheck = position;
+        // function help()
+        function help() {
+          var displayText = "";
+          var treasureInCol = parseInt(treasureLocation % 5);
+          var treasureInrow = parseInt(treasureLocation / 5);
+          var lastCheckedCol = parseInt(lastCheck % 5);
+          var lastCheckedRow = parseInt(lastCheck / 5);
+          var column = treasureInCol == lastCheckedCol;
+          var row = treasureInrow == lastCheckedRow;
+          var columnDifference = lastCheckedCol - treasureInCol;
+          var rowDifference = lastCheckedRow - treasureInrow;
+
+          if (column || row) {
+            if (rowDifference == 1 || columnDifference == 1) {
+              displayText = "can smell it";
+            } else if (rowDifference == 2 || columnDifference == 2) {
+              displayText = "Close Matie";
+            } else {
+              displayText = "Step faster";
+            }
+          } else if (rowDifference == 1 && columnDifference == 1) {
+            displayText = "CLose Matie";
+          } else {
+            displayText = "Step Faster";
+          }
+          penalty = penalty + 2;
+          document.getElementById("penalty").innerHTML =
+            "Penalty is: " + penalty;
+          document.getElementById("help").innerHTML = displayText;
+        }
+
+        var trapLocation = Math.floor(Math.random() * 25);
+        var treasureLocation = Math.floor(math.random() * 25);
+        function newGame() {
+          trapLocation = Math.floor(Math.random() * 25);
+          treasureLocation = Math.floor(math.random() * 25);
+          checkCount = 0;
+          penalty = 0;
+          lastCheck = 0;
+          gameOver = false;
+          document.getElementById("locations").innerHTML =
+            "Number of locations checked is 0";
+          document.getElementById("penalty").innerHTML = "Penalty is 0";
+          document.getElementById("help").innerHTML = "lick for help";
+        }
+      }
+    </script>
   </body>
 </html>
