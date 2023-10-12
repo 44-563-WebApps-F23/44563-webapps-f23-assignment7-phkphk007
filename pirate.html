@@ -216,8 +216,8 @@
       var checkCount = 0;
       var penalty = 0;
       var lastCheck = 0;
-      var treasureLocation = 5;
-      var trapLocation = 18;
+      var trapLocation = Math.floor(Math.random() * 25);
+      var treasureLocation = Math.floor(math.random() * 25);
       var gameOver = false;
 
       // check(position fucntion start
@@ -246,46 +246,31 @@
         lastCheck = position;
       }
       // function help()
-      function help() {
-        var displayText = "";
-        var treasureInCol = parseInt(treasureLocation % 5);
-        var treasureInrow = parseInt(treasureLocation / 5);
-        var lastCheckedCol = parseInt(lastCheck % 5);
-        var lastCheckedRow = parseInt(lastCheck / 5);
-        var column = treasureInCol == lastCheckedCol;
-        var row = treasureInrow == lastCheckedRow;
-        var columnDifference = lastCheckedCol - treasureInCol;
-        var rowDifference = lastCheckedRow - treasureInrow;
 
-        if (column || row) {
-          if (rowDifference == 1 || columnDifference == 1) {
-            displayText = "can smell it";
-          } else if (rowDifference == 2 || columnDifference == 2) {
-            displayText = "Close Matie";
-          } else {
-            displayText = "Step faster";
-          }
-        } else if (rowDifference == 1 && columnDifference == 1) {
-          displayText = "CLose Matie";
-        } else {
-          displayText = "Step Faster";
-        }
+      function help() {
+        let treasureInrow = Math.floor(treasureLocation / 5);
+        let treasureInCol = treasureLocation % 5;
+        let LR = Math.floor(lastCheck / 5);
+        let LC = lastCheck % 5;
+        let RDiff = Math.abs(treasureInrow - LR);
+        let CDiff = Math.abs(treasureInCol - LC);
+        let difference = Math.abs(RDiff - CDiff);
+        console.log(treasureInrow, treasureInCol, LR, LC);
         penalty = penalty + 2;
-        document.getElementById("penalty").innerHTML = "Penalty is: " + penalty;
-        document.getElementById("help").innerHTML = displayText;
+        document.getElementById("penalty").innerHTML =
+          "Total Penalty Points :" + penalty;
+        let myhelp = document.getElementById("help");
+        if ((RDiff == 0 || CDiff == 0) && difference == 1) {
+          myhelp.innerHTML = "Can smell it";
+        } else if (RDiff + CDiff == 2) {
+          myhelp.innerHTML = "Close Matie";
+        } else {
+          myhelp.innerHTML = "Step Faster";
+        }
       }
 
-      var trapLocation = Math.floor(Math.random() * 25);
-      var treasureLocation = Math.floor(math.random() * 25);
       function newGame() {
-        checkCount = 0;
-        penalty = 0;
-        lastCheck = 0;
-        gameOver = false;
-        document.getElementById("locations").innerHTML =
-          "Number of locations checked is 0";
-        document.getElementById("penalty").innerHTML = "Penalty is 0";
-        document.getElementById("help").innerHTML = "lick for help";
+        location.reload();
       }
     </script>
   </body>
