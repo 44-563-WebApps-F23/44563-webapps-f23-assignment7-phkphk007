@@ -44,11 +44,11 @@
     <div class="container">
       <h1>Find the treasure by Hemanth Kumar</h1>
       <p>Click on the locations to search for treasure, beware the traps</p>
-      <p id="locations">Number of locations checked is zero</p>
-      <p id="penalty">Penalty is zero</p>
-      <p>Click for help</p>
-      <p id="help">Help report</p>
-
+      <div id="locations">Number of locations checked is zero</div>
+      <div id="penalty">Penalty is zero</div>
+      <div onclick="help()">Click for help</div>
+      <div id="help">Help report</div>
+      <button onclick="newGame()">New Game</button>
       <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <div class="col">
           <div class="p-2">
@@ -222,11 +222,11 @@
 
       // check(position fucntion start
       function check(position) {
+        var id = ids[position];
+        var image = document.getElementById(id);
         if (gameOver) {
           return;
         }
-        var id = ids[position];
-        var image = document.getElementById(id);
         if (position == treasureLocation) {
           image.src = "treasure.jpg";
           gameOver = true;
@@ -244,51 +244,48 @@
           "Number of locations checked is " + checkCount;
         document.getElementById("penalty").innerHTML = "penalty is " + penalty;
         lastCheck = position;
-        // function help()
-        function help() {
-          var displayText = "";
-          var treasureInCol = parseInt(treasureLocation % 5);
-          var treasureInrow = parseInt(treasureLocation / 5);
-          var lastCheckedCol = parseInt(lastCheck % 5);
-          var lastCheckedRow = parseInt(lastCheck / 5);
-          var column = treasureInCol == lastCheckedCol;
-          var row = treasureInrow == lastCheckedRow;
-          var columnDifference = lastCheckedCol - treasureInCol;
-          var rowDifference = lastCheckedRow - treasureInrow;
+      }
+      // function help()
+      function help() {
+        var displayText = "";
+        var treasureInCol = parseInt(treasureLocation % 5);
+        var treasureInrow = parseInt(treasureLocation / 5);
+        var lastCheckedCol = parseInt(lastCheck % 5);
+        var lastCheckedRow = parseInt(lastCheck / 5);
+        var column = treasureInCol == lastCheckedCol;
+        var row = treasureInrow == lastCheckedRow;
+        var columnDifference = lastCheckedCol - treasureInCol;
+        var rowDifference = lastCheckedRow - treasureInrow;
 
-          if (column || row) {
-            if (rowDifference == 1 || columnDifference == 1) {
-              displayText = "can smell it";
-            } else if (rowDifference == 2 || columnDifference == 2) {
-              displayText = "Close Matie";
-            } else {
-              displayText = "Step faster";
-            }
-          } else if (rowDifference == 1 && columnDifference == 1) {
-            displayText = "CLose Matie";
+        if (column || row) {
+          if (rowDifference == 1 || columnDifference == 1) {
+            displayText = "can smell it";
+          } else if (rowDifference == 2 || columnDifference == 2) {
+            displayText = "Close Matie";
           } else {
-            displayText = "Step Faster";
+            displayText = "Step faster";
           }
-          penalty = penalty + 2;
-          document.getElementById("penalty").innerHTML =
-            "Penalty is: " + penalty;
-          document.getElementById("help").innerHTML = displayText;
+        } else if (rowDifference == 1 && columnDifference == 1) {
+          displayText = "CLose Matie";
+        } else {
+          displayText = "Step Faster";
         }
+        penalty = penalty + 2;
+        document.getElementById("penalty").innerHTML = "Penalty is: " + penalty;
+        document.getElementById("help").innerHTML = displayText;
+      }
 
-        var trapLocation = Math.floor(Math.random() * 25);
-        var treasureLocation = Math.floor(math.random() * 25);
-        function newGame() {
-          trapLocation = Math.floor(Math.random() * 25);
-          treasureLocation = Math.floor(math.random() * 25);
-          checkCount = 0;
-          penalty = 0;
-          lastCheck = 0;
-          gameOver = false;
-          document.getElementById("locations").innerHTML =
-            "Number of locations checked is 0";
-          document.getElementById("penalty").innerHTML = "Penalty is 0";
-          document.getElementById("help").innerHTML = "lick for help";
-        }
+      var trapLocation = Math.floor(Math.random() * 25);
+      var treasureLocation = Math.floor(math.random() * 25);
+      function newGame() {
+        checkCount = 0;
+        penalty = 0;
+        lastCheck = 0;
+        gameOver = false;
+        document.getElementById("locations").innerHTML =
+          "Number of locations checked is 0";
+        document.getElementById("penalty").innerHTML = "Penalty is 0";
+        document.getElementById("help").innerHTML = "lick for help";
       }
     </script>
   </body>
