@@ -41,6 +41,7 @@
     <button onclick="addEnd()">Add End</button>
     <button onclick="addFront()">Add Front</button>
     <button onclick="remove()">Remove</button>
+    <button onclick="swap()">Swap</button>
   </body>
   <script>
     function addEnd() {
@@ -69,6 +70,17 @@
       element.className = "merger";
       let container = document.getElementById("target");
       container.insertBefore(element, container.firstChild);
+    }
+
+    function swap() {
+      let mitems = document.getElementsByClassName("merger");
+      let length = mitems.length;
+      let item = Math.floor(Math.random() * length);
+      let randomNumber = mitems[item];
+      randomNumber.parentNode.insertBefore(
+        randomNumber,
+        randomNumber.parentNode.firstChild
+      );
     }
   </script>
 </html>
